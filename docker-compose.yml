@@ -1,0 +1,16 @@
+# This composition including its keys are used for development purposes only.
+version: "3.1"
+
+services:
+
+  locust:
+    container_name: locust
+    image: locustio/locust:0.12.2
+    environment:
+      LOCUSTFILE_PATH: "/code/locustfile.py"
+      TARGET_URL: "http://0.0.0.0:8080"
+      OAUTH_CREDENTIALS: "d2tYTGxDOWgzazBqeEl4N29MbGx4cEZWVTg5RHhnaTdPOEZZWnlmWDpLaUtSZnQ4TWFqTGFiUUlkN3BqU3NhM09mdkpBWE45TkVOaTB0VlJUWDNWYnRocjZpQ2xFRFpadGJ5R3VEOU04VWJLcEsyRThSNHhKWVVvbFp4ZzFuVmExaVp3aFFQaTVpb25PS2RwSXM0ZGUyYm1VYVowcVdpNE1kQm1kd0R2Rg=="
+    ports:
+      - "8089:8089"
+    volumes:
+      - .:/code
